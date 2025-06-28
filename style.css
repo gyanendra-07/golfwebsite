@@ -11,16 +11,33 @@ html, body{
 
 }
 #nav{
-    height: 145px;
+    height: 130px;
     width: 100%;
     /* background-color: red;  */
     display: flex;
     position: fixed;
     align-items: center;
-    padding: 0 150px;
+    padding: 0 130px;
     justify-content: flex-start;
-    gap: 50px;
+    gap: 52px;
     z-index: 99;
+}
+#cursor{
+    height: 20px;
+    width: 20px;
+    background-color: #799D19;
+    border-radius: 70%;
+    position: fixed;
+    z-index: 99;
+}
+#cursor-blur{
+    height: 400px;
+    width: 400px;
+    background-color: #82a9167c;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 9;
+    filter: blur(50px);
 }
 #nav img{
     height: 75px;
@@ -51,8 +68,9 @@ html, body{
     align-items: center;
     flex-direction: column;
     text-align: center;
-    
+    z-index: 10;
 }
+
 #h1{
     font-size: 140px;
     font-weight: 900;
@@ -82,5 +100,52 @@ html, body{
 #page2{
     height: 100vh;
     width: 100%;
+    z-index: 10;
     
+}
+#scroller{
+    /* background: red; */
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 10;
+}
+#scroller::-webkit-scrollbar{
+    display: none;
+}
+#scroller-in{
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 25s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+#scroller-in{
+    display: inline-block;
+    white-space: nowrap;
+}
+#scroller h4{
+        display: inline-block;
+        font-size: 130px;
+        font-family: gilroy;
+        font-weight: 900;
+        margin-right: 10px;
+        transition: all linear 0.5s ;
+        color: transparent;
+        text-transform: uppercase;  
+        -webkit-text-stroke: 2px #799D19;
+
+}
+#scroller h4:hover{
+    color: #799D19;
+}
+@keyframes scroll {
+    from{
+        transform: translate(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
 }
